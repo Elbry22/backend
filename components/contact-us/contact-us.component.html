@@ -28,9 +28,6 @@
 
 
 -----------------------------------------------------------------------------
-
-
-
 <app-header></app-header>
 <section class="section">
   <div class="container">
@@ -89,4 +86,7 @@
         Message should have a minimum length of 5 characters.
       </div>
 
-     
+      <input type="submit" [disabled]="!userDetailsForm.valid" value="Send">
+    </form>
+  </div>
+</section>
