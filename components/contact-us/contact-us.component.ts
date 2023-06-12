@@ -29,6 +29,17 @@ userDetailsForm!: FormGroup;
       });
     }
 
+------------------------------------------------------------------------
+
+
+this.userDetailsForm = this.fb.group({
+  name: ['', [Validators.required, Validators.maxLength(50), Validators.pattern(/^[a-zA-Z\s]*$/)]],
+  email: ['', [Validators.required, Validators.email, Validators.maxLength(50)]],
+  subject: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(5), Validators.pattern(/^[a-zA-Z\s]*$/)]],
+  massage: ['', [Validators.required, Validators.maxLength(500), Validators.minLength(5)]],
+});
+
+
 
   SendContactUsData(data : any){
     
