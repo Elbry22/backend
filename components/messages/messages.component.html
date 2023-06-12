@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>Contact Us Messages </h2>
+      
+    <table class="table table-striped">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th width="450px">Message</th>
+                <th>Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let user of userlist">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.subject}}</td>
+                <td>{{user.massage}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" [routerLink]="['/reply/{{user.id}}']">Replay</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+  </div>

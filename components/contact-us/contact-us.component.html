@@ -1,0 +1,27 @@
+
+<app-header></app-header>
+<section class="section">
+        
+    <div class="container">
+        <div class="contact-title">
+            <p class="sec-sub-title mb-3">Contact Us</p>
+        </div>
+      <form  [formGroup]="userDetailsForm"  #contactForm="ngForm" (ngSubmit)="SendContactUsData(contactForm.value)">
+        <label for="Name">Name</label>
+        <input type="text" id="fname" ngModel name="name" formControlName="name" placeholder="Your name..">
+    
+        <label for="Email">Email</label>
+        <input type="text" id="lname" ngModel name="email" formControlName="email" placeholder="Enter Your Name..">
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" ngModel name="Subject" formControlName="subject" placeholder="Write something.." style="height:50px"></textarea>
+    
+        <label for="Massage">Message</label>
+        <textarea id="subject"  ngModel name="massage" formControlName="massage" placeholder="Write something.." style="height:140px"></textarea>
+     
+        <input type="submit" [disabled]="!userDetailsForm.valid" value="Send">
+      </form>
+   
+        
+    </div>
+</section>

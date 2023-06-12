@@ -1,0 +1,45 @@
+
+<app-header></app-header>
+<section class="container">
+    <table class="table table-striped">
+        <thead>
+              <tr>
+             
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th width="450px">Message</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let user of userlist">
+             
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.subject}}</td>
+                <td>{{user.massage}}</td>
+              </tr>
+        </tbody>
+    </table>
+</section>
+
+<section class="section">
+        
+    <div class="container">
+        <div class="contact-title">
+            <p class="sec-sub-title mb-3">Reply</p>
+        </div>
+      <form    #contactForm="ngForm">
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" ngModel name="Subject" formControlName="subject" placeholder="Write something.." style="height:50px"></textarea>
+    
+        <label for="Massage">Message</label>
+        <textarea id="subject"  ngModel name="massage" formControlName="massage" placeholder="Write something.." style="height:140px"></textarea>
+     
+        <input type="submit"  value="Send" (click)="replaymessage()">
+      </form>
+   
+        
+    </div>
+</section>
