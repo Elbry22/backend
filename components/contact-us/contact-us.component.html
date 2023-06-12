@@ -25,3 +25,68 @@
         
     </div>
 </section>
+
+
+-----------------------------------------------------------------------------
+
+
+
+<app-header></app-header>
+<section class="section">
+  <div class="container">
+    <div class="contact-title">
+      <p class="sec-sub-title mb-3">Contact Us</p>
+    </div>
+    <form [formGroup]="userDetailsForm" #contactForm="ngForm" (ngSubmit)="SendContactUsData(contactForm.value)">
+      <label for="Name">Name</label>
+      <input type="text" id="fname" ngModel name="name" formControlName="name" placeholder="Your name..">
+      <div *ngIf="userDetailsForm.controls.name.errors?.required && userDetailsForm.controls.name.touched">
+        Name is required.
+      </div>
+      <div *ngIf="userDetailsForm.controls.name.errors?.maxlength && userDetailsForm.controls.name.touched">
+        Name should not exceed 50 characters.
+      </div>
+      <div *ngIf="userDetailsForm.controls.name.errors?.pattern && userDetailsForm.controls.name.touched">
+        Name should only contain English alphabets and spaces.
+      </div>
+
+      <label for="Email">Email</label>
+      <input type="text" id="lname" ngModel name="email" formControlName="email" placeholder="Enter Your Name..">
+      <div *ngIf="userDetailsForm.controls.email.errors?.required && userDetailsForm.controls.email.touched">
+        Email is required.
+      </div>
+      <div *ngIf="userDetailsForm.controls.email.errors?.email && userDetailsForm.controls.email.touched">
+        Invalid email format.
+      </div>
+      <div *ngIf="userDetailsForm.controls.email.errors?.maxlength && userDetailsForm.controls.email.touched">
+        Email should not exceed 50 characters.
+      </div>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" ngModel name="Subject" formControlName="subject" placeholder="Write something.." style="height:50px"></textarea>
+      <div *ngIf="userDetailsForm.controls.subject.errors?.required && userDetailsForm.controls.subject.touched">
+        Subject is required.
+      </div>
+      <div *ngIf="userDetailsForm.controls.subject.errors?.maxlength && userDetailsForm.controls.subject.touched">
+        Subject should not exceed 50 characters.
+      </div>
+      <div *ngIf="userDetailsForm.controls.subject.errors?.minlength && userDetailsForm.controls.subject.touched">
+        Subject should have a minimum length of 5 characters.
+      </div>
+      <div *ngIf="userDetailsForm.controls.subject.errors?.pattern && userDetailsForm.controls.subject.touched">
+        Subject should only contain English alphabets and spaces.
+      </div>
+
+      <label for="Massage">Message</label>
+      <textarea id="subject" ngModel name="massage" formControlName="massage" placeholder="Write something.." style="height:140px"></textarea>
+      <div *ngIf="userDetailsForm.controls.massage.errors?.required && userDetailsForm.controls.massage.touched">
+        Message is required.
+      </div>
+      <div *ngIf="userDetailsForm.controls.massage.errors?.maxlength && userDetailsForm.controls.massage.touched">
+        Message should not exceed 500 characters.
+      </div>
+      <div *ngIf="userDetailsForm.controls.massage.errors?.minlength && userDetailsForm.controls.massage.touched">
+        Message should have a minimum length of 5 characters.
+      </div>
+
+     
